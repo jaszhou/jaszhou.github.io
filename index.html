@@ -1,1 +1,99 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <title>Hot Coin - Top cryptos on exchanges </title>
+
+   <script src="js/nebulas.min.js"></script>
+
+   <script type="text/javascript" src="./dist/nebPay.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+
+    </head>
+
+<body>
+
+
+
+
+   <div class="container">
+       <div class="top">
+           <div class="content">
+               <span><h1 align="center">The Top Rated Tokens</h1> </span>
+           </div>
+       </div>
+       <div class="main"></div>
+   </div>
+
+<br><br>
+<p></p>
+
+<div class="container">
+
+  <div class="container">
+
+          <div class="panel panel-info">
+            <div class="panel-heading">Voting Rule:</div>
+            <div class="panel-body">You can vote for the most profitable tokens on exchange
+               at the moment. One user can only vote once per 100 blockchain blocks.
+               You may find the current block height from the explorer at: <a href='https://explorer.nebulas.io/#/blocks?p=1' target=_blank> explorer.nebulas.io </a>
+               <div id=height></div>
+          </div>
+
+
+  <table id=theTable class="table table-striped">
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>BlockChain Name</th>
+        <th>Total Votes Received</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+
+        <div class="noExtension hide" id="noExtension">
+            NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use the DApp
+        </div>
+
+        <div class="search">
+            <input id="search_value" type="text">
+            <button id=search>search token</button>
+        </div>
+
+        <div class="result_success hide">
+            <div id=search_banner></div>
+            <p id=search_result> wait for content </p>
+            <div class="author">
+                <i><p> Author:</p> <p id=search_result_author> </p></i>
+            </div>
+        </div>
+
+        <div class="result_faile hide">
+            Failed to find the token. Do you want to <button id="add">add</button> token infromation for "<i id="result_faile_add">asd</i>"?
+        </div>
+
+        <div class="add_banner hide">
+            <input type="text" id="add_value" placeholder="input blockchain name for this token">
+            <button id="push">submit</button>
+            </div>
+    </div>
+
+    <script src="js/front.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <title>Address Book - your universal address control center</title>
+
+   <script src="js/nebulas.min.js"></script>
+   <script type="text/javascript" src="./dist/nebPay.js"></script>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+
+    </head>
+
+<body class="bg">
+  <div class="container">
+
+  <div class="container">
+
+    <!-- First Container -->
+    <div class="container-fluid bg-3 text-center">
+      <h2 class="margin">Nebulas AddressBook v3</h3>
+
+    </div>
+
+
+
+          <div class="container-fluid bg-2 ">
+            <div class="panel-heading">Why do you need Nebulas AddressBook?</div>
+            <div class="panel-body">You can manage your address with AddressBook and send the hashcode to anyone you trust such as government agents.
+              When you change your contact details via AddressBook, the agents will get the latest update via the unique hashcode.
+              You save the hassle to contact each agencies for address change and you are controlling your contact information completely by yourself.
+            </div>
+          </div>
+
+              <div class="container-fluid bg-3 ">
+                <div class="panel-heading">Blockchain information:</div>
+                <div class="panel-body">
+               <div id=height></div>
+               <div id=acct></div>
+               <div id=hash></div>
+
+          </div>
+        </div>
+
+          <div class="container-fluid bg-1">
+            <div class="panel-heading">Contact information:</div>
+            <div class="panel-body">
+
+
+
+ <div id=new >
+  <div class="form-group">
+    Account:<input type="text" class="form-control"
+      placeholder="account_id" name="_id" id="_id">
+    </input>
+    HashCode:<input type="text" class="form-control"
+      placeholder="hashcode" name="hashcode" id="hashcode">
+    </input>
+    Name:<input type="text" class="form-control" placeholder="Name" name="Name" id=name>
+    </input>
+    Address:<input type="text" class="form-control"
+      placeholder="Address" name="Address" id=address>
+    </input>
+    Phone:<input type="text" class="form-control"
+      placeholder="Phone" name="Phone" id=phone>
+    </input>
+    Email:<input type="text" class="form-control"
+      placeholder="Email" name="Email" id=email>
+    </input>
+    Others:<input type="text" class="form-control"
+      placeholder="Others" name="Others" id=others>
+    </input>
+
+  </div>
+
+  <a id=save href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-update"></span> Update
+  </a>
+
+      <div>Note: only the account owner can update the contact information! </div>
+
+  </div>
+
+</div>
+
+</div>
+
+  <div class="container-fluid bg-3">
+        <div class="noExtension hide" id="noExtension">
+            NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use the DApp
+        </div>
+
+        <div class="search">
+            <input id="search_value" type="text" placeholder="find address by hashcode">
+            <button id=search>search</button>
+        </div>
+
+        <div class="result_success hide">
+            <div id=search_banner></div>
+            <p id=search_result> wait for content </p>
+            <div class="author">
+                <i><p> Author:</p> <p id=search_result_author> </p></i>
+            </div>
+        </div>
+
+        <div id=fail class="result_faile hide">
+            Failed to find the address.
+        </div>
+
+        <div class="add_banner hide">
+            <input type="text" id="add_value" placeholder="input blockchain name for this token">
+            <button id="push">submit</button>
+
+
+            </div>
+    </div>
+</div>
+    <script src="js/addr_front.js"></script>
+
+
+  </body>
+
+</html>

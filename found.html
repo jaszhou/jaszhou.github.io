@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <title>Lost & Found - find your precious </title>
+
+   <script src="js/nebulas.min.js"></script>
+   <script type="text/javascript" src="./dist/nebPay.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+    </head>
+
+<body class="bg">
+  <div class="container">
+
+  <div class="container">
+
+    <!-- First Container -->
+    <div class="container-fluid bg-3 text-center">
+      <img align="left" src="nebulasx60.png"><img align="middle" src="lf.png">
+
+    </div>
+
+
+
+
+
+          <div class="container-fluid bg-2 ">
+
+            <div class="panel-body">
+              <div class="form-group">
+
+                  <input class="form-control" id="search_value" type="text" placeholder="find lost item by hashcode" value="ad245af43320715" STYLE='color=black'>
+
+                  <a id=search href="#" class="btn btn-default btn-lg">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                  </a>
+
+
+              </div>
+
+              <div id=fail class="result_faile hide">
+                  Failed to find the item.
+              </div>
+
+            </div>
+          </div>
+
+
+          <div class="container-fluid bg-3">
+            <div class="panel-heading">Details:</div>
+            <div class="panel-body">
+ <div id=new >
+  <div class="form-group">
+
+    HashCode: <font size="2">auto generated unique hashcode for item</font><input type="text" class="form-control"
+      placeholder="hashcode" name="hashcode" id="hashcode" readonly>
+    </input>
+    Name: <font size="2">a short name such as Water Bottle</font><input type="text" class="form-control" placeholder="Name" name="Name" id=name readonly>
+    </input>
+
+    Description: <font size="2">a brief description about the item</font><input type="text" class="form-control"
+      placeholder="Description" name="description" id=description readonly>
+    </input>
+    Founder: <font size="2">If you find something, you can leave your name here. Otherwise,leave it as blank.</font><input type="text" class="form-control"
+      placeholder="Finder" name="finder" id=founder>
+    </input>
+    Message: <font size="2">Leave a message to the owner or leave it as blank.</font><input type="text" class="form-control"
+      placeholder="Leave a message" name="msg" id=msg>
+    </input>
+
+  </div>
+
+  <a id=found href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-update"></span> Update
+  </a>
+  <a id=found href="lostfound.html" class="btn btn-default btn-lg">
+     Back
+  </a>
+   <div id=result></div>
+
+  </div>
+
+</div>
+
+</div>
+
+
+
+  <div class="container-fluid bg-3">
+        <div class="noExtension hide" id="noExtension">
+            NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use the DApp
+        </div>
+
+
+      <div id=theTable></div>
+
+        <div class="row" >
+          <div class='col' style="text-align: center;">
+            <div>Developer: jaszhou@gmail.com</div>
+
+          </div>
+        </div>
+
+    </div>
+
+
+</div>
+    <script src="js/lostfound.js"></script>
+
+
+
+
+  </body>
+
+</html>

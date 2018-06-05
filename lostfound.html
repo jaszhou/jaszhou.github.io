@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <title>Lost & Found - find your precious </title>
+
+   <script src="js/nebulas.min.js"></script>
+   <script type="text/javascript" src="./dist/nebPay.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    /* Center the loader */
+    #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 60px;
+      height: 60px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Add animation to "page content" */
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 }
+      to { bottom:0px; opacity:1 }
+    }
+
+    @keyframes animatebottom {
+      from{ bottom:-100px; opacity:0 }
+      to{ bottom:0; opacity:1 }
+    }
+
+    #myDiv {
+      display: none;
+      text-align: center;
+    }
+    </style>
+
+
+    </head>
+
+<body class="bg">
+  <div class="container">
+
+  <div class="container">
+
+    <!-- First Container -->
+    <div class="container-fluid bg-3 text-center">
+      <img align="left" src="nebulasx60.png"><img align="middle" src="lf.png">
+
+    </div>
+
+
+
+          <div class="container-fluid bg-1 ">
+            <div class="panel-heading">What is Lost & Found?
+              <a id=search href="userguide.html" class="btn btn-default btn-lg">
+              <span class="glyphicon glyphicon-info"></span>使用指南
+            </a>
+                          <a id=search href="found.html" class="btn btn-default btn-lg">
+                          <span class="glyphicon glyphicon-search"></span> 失物查询
+                        </a>
+                  </div>
+            <div class="panel-body"> You can register your precious belongings here and the information will be saved in Nebulas blockchain permanently.
+              Once you have register the item, you will receive a unique hashcode. Mark the hashcode on your item such as a waterbottle.
+              In case you lose the item and lucky someone find it, the finder may leave you a message on the blockchain.
+              You may say a big THANK-YOU to the finder or even send the finder some NAS token as reward.
+                </div>
+          </div>
+
+
+
+          <div class="container-fluid bg-3">
+            <div class="panel-heading">Register a new item:</div>
+            <div class="panel-body">
+ <div id=new >
+  <div class="form-group">
+    Account: <font size="2">your current NAS wallet address</font><input type="text" class="form-control"
+      placeholder="account_id" name="_id" id="_id">
+    </input>
+    HashCode: <font size="2">auto generated unique hashcode for item</font><input type="text" class="form-control"
+      placeholder="hashcode" name="hashcode" id="hashcode">
+    </input>
+    Name: <font size="2">a short name such as Water Bottle</font><input type="text" class="form-control" placeholder="Name" name="Name" id=name>
+    </input>
+    Address: <font size="2">this is the unique hashcode of your contact address, please refer to the <a href='http://skyscreening.com/addressbook.html#'>Nebulas Addressbook</a></font>
+    <input type="text" class="form-control"
+      placeholder="Address" name="Address" id=address>
+    </input>
+    Description: <font size="2">a brief description about the item</font><input type="text" class="form-control"
+      placeholder="Description" name="description" id=description>
+    </input>
+    Founder: <font size="2">If you find something, you can leave your name here. Otherwise,leave it as blank.</font><input type="text" class="form-control"
+      placeholder="Finder" name="finder" id=founder>
+    </input>
+    Message: <font size="2">Leave a message to the owner or leave it as blank.</font><input type="text" class="form-control"
+      placeholder="Leave a message" name="msg" id=msg>
+    </input>
+
+
+  </div>
+
+  <a id=save href="#" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-update"></span> Register
+  </a>
+
+
+
+
+  </div>
+
+</div>
+<div id="loader" style="display:none;"></div>
+</div>
+
+
+
+<div class="container-fluid bg-1">
+  <div class="panel-heading">My items:</div>
+  <div class="panel-body">
+
+    <div id=list >
+      <table id=theTable class="table">
+        <thead>
+          <tr>
+            <th>Item HashCode</th>
+            <th>Name</th>
+            <th>Description</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container-fluid bg-3">
+        <div class="noExtension hide" id="noExtension">
+            NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use the DApp
+        </div>
+
+
+
+
+        <div class="row" >
+          <div class='col' style="text-align: center;">
+            <div>Developer: jaszhou@gmail.com</div>
+
+          </div>
+        </div>
+
+    </div>
+
+
+</div>
+    <script src="js/lostfound.js"></script>
+
+
+
+
+  </body>
+
+</html>
