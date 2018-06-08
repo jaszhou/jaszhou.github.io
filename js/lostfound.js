@@ -5,8 +5,9 @@ var Transaction = require("nebulas").Transaction;
 var Unit = require("nebulas").Unit;
 var myneb = new Neb();
 
-myneb.setRequest(new HttpRequest("https://mainnet.nebulas.io"));
+//myneb.setRequest(new HttpRequest("https://mainnet.nebulas.io"));
 // myneb.setRequest(new HttpRequest("https://testnet.nebulas.io"));
+myneb.setRequest(new HttpRequest("http://localhost:8685"));
 
 var account, tx, txhash;
 var serialNumber;
@@ -23,7 +24,9 @@ var callbackUrl = NebPay.config.mainnetUrl;   //如果合约在主网,则使用�
 
 // MainNet
 //var dappAddress = "n1xn2u5faqvVcQwz32gHMRMXUp62TzqkXy3";
- var dappAddress = "n1yo7AGteo3C7BmRWogRoKyraMJSLWSAYv9";
+// var dappAddress = "n1yo7AGteo3C7BmRWogRoKyraMJSLWSAYv9";  //MainNet
+
+ var dappAddress = "n1j2gvpQd2wxgnDVbvUyCVNeYBK5NfgAHuv";  //PrivaNet
 
 
 // hash 3c73838450e9cdc38a768b87ee4d1c98b2a0fbbaabb32eced5b7d31c6b8f4605
