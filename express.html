@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head profile="http://www.w3.org/2005/10/profile">
+<link rel="icon"
+      type="image/png"
+      href="img/logoicon.png">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+    <title>OurSteps Express  - Designed for Australia Crypto Community Group </title>
+
+   <script src="js/nebulas.min.js"></script>
+
+   <script type="text/javascript" src="./dist/nebPay.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style2.css">
+
+
+
+    </head>
+
+<body>
+
+
+
+
+   <div class="container">
+       <div class="top">
+           <div class="content">
+               <span><h1 align="center">足迹快车 (Beta v0.1)</h1> </span>
+           </div>
+       </div>
+       <div class="main"></div>
+   </div>
+
+<br><br>
+<p></p>
+
+<div class="container">
+
+  <div class="container">
+
+          <div class="panel panel-info">
+            <div class="panel-heading">功能介绍:</div>
+            <div class="panel-body"> 此网页是针对足迹加密币社区设计，提供一些功能，希望对以后开车有所帮助。
+              目前发布的是基于星云网(Nebulas)的Dapp,以后可能会在以太(Etherumn)上也做一个类似的应用。
+
+              当前测试版本的功能有：
+              <ul>
+                <li>用户首先在这里注册自己的星云钱包地址，具体请参考<a href='https://github.com/nebulasio/web-wallet.git'>星云钱包</a>和<a href='https://github.com/ChengOrangeJu/WebExtensionWallet'> Chrome Extension </a> </li>
+                <li>如果有新的项目，会在网页里更新。目前做为测试，开始了第一个项目：星云有奖推广</li>
+                <li>项目结束之后，如果能成功，用户可以在网页自动提取代币(Token)</li>
+              </ul>
+              下一步核心功能：
+              <ul>
+                <li>如果有正式可以发车的项目，用户可以在此投币，类似普通的ICO</li>
+                <li>为了公开和透明，所有的转账活动会被记录在链上。在支付总资金时，需要参加用户投票过半数才能进行。这些会通过开放的智能合约代码实现。</li>
+              </ul>
+
+              <div id=height></div>
+          </div>
+
+        </div>
+
+
+  <div class="panel panel-info">
+    <div class="panel-heading">当前项目:</div>
+    <div class="panel-body">
+
+  <table id=theTable class="table table-striped">
+    <thead>
+      <tr>
+        <th>项目</th>
+        <th>项目介绍</th>
+        <th>参加人数</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <div id=div1 class="hide">
+
+    <div class="form-group">
+      Account: <font size="2">your current NAS wallet address</font><input type="text" class="form-control"
+        placeholder="account_id" name="_id" id="_id">
+      </input>
+      Project: <font size="2">project to join</font><input type="text" class="form-control"
+        placeholder="project" name="project_id" id="project_id">
+      </input>
+      Name: <font size="2">Name used to register in Nebulas website</font><input type="text" class="form-control" placeholder="Name" name="Name" id=name>
+      </input>
+      Description: <font size="2">a brief description (optional)</font><input type="text" class="form-control"
+        placeholder="Description" name="description" id=description>
+      </input>
+    </div>
+
+    <a id=save href="#" class="btn btn-default btn-lg">
+      <span class="glyphicon glyphicon-update"></span> 注册
+    </a>
+  </div>
+
+    </div>
+  </div>
+
+  <div class="panel panel-info">
+    <div class="panel-heading">已注册用户:</div>
+    <div class="panel-body">
+
+      <table id=userTable class="table table-striped">
+        <thead>
+          <tr>
+            <th>用户账号</th>
+            <th>项目</th>
+            <th>用户名</th>
+            <th>备注</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+</div>
+
+        <div class="noExtension hide" id="noExtension">
+            NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use the DApp
+        </div>
+
+      
+    </div>
+
+    <script src="js/express_front.js"></script>
+
+
+  </body>
+
+</html>
