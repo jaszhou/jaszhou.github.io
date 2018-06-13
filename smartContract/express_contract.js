@@ -1,5 +1,7 @@
 "use strict";
 
+var owner='n1YH9ZfzMyvwnqnDSJVzgfX7jLaur5268qi';
+
 var CoinItem = function(text) {
     if (text) {
         var obj = JSON.parse(text);
@@ -87,16 +89,16 @@ HotDollar.prototype = {
         this.UserSize = 0;
         this.height = 100; // time to wait for next vote
 
-        var key = "NAS"
-        CoinItem = new CoinItem();
-        CoinItem.voter = Blockchain.transaction.from;
-        CoinItem.key = key;
-        CoinItem.value = "Nebulas";
-        CoinItem.poll = 0;
-
-        this.repo.put(key, CoinItem);
-        this.arrayMap.put(0, key);
-        this.size += 1;
+        // var key = "NAS"
+        // CoinItem = new CoinItem();
+        // CoinItem.voter = Blockchain.transaction.from;
+        // CoinItem.key = key;
+        // CoinItem.value = "Nebulas";
+        // CoinItem.poll = 0;
+        //
+        // this.repo.put(key, CoinItem);
+        // this.arrayMap.put(0, key);
+        // this.size += 1;
     },
 
     // get: function (key) {

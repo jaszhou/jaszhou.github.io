@@ -5,8 +5,8 @@ var Transaction = require("nebulas").Transaction;
 var Unit = require("nebulas").Unit;
 var myneb = new Neb();
 
-// myneb.setRequest(new HttpRequest("https://mainnet.nebulas.io"));
-myneb.setRequest(new HttpRequest("https://testnet.nebulas.io"));
+myneb.setRequest(new HttpRequest("https://mainnet.nebulas.io"));
+// myneb.setRequest(new HttpRequest("https://testnet.nebulas.io"));
 
 var account, tx, txhash, totalnum;
 var arrs = [];
@@ -16,10 +16,10 @@ var nebPay = new NebPay();
 var callbackUrl = NebPay.config.mainnetUrl;   //如果合约在主网,则使用这个
 
 // MainNet
-// var dappAddress = "n1dwbdKjU4817gMmsCnAQidj5sk7av92oTP";
+var dappAddress = "n1purfKkMQrxza39tVJP22poyb97mMcsZNx";
 
 // TestNet
-var dappAddress = "n1sTMF56ed86u3X1ANt8LnbxjAiRcn9s3kz";
+// var dappAddress = "n1ofecsSErLz9Cy7s9gqkLAZq4qdmhLvVXo";
 
 
 
@@ -30,13 +30,13 @@ var dappAddress = "n1sTMF56ed86u3X1ANt8LnbxjAiRcn9s3kz";
         console.log("web page loaded...")
         setTimeout(checkNebpay,100);
 
-        myneb.api.latestIrreversibleBlock().then(function(blockData) {
-        //code
-        console.log(JSON.stringify(blockData));
-
-            $("#height").text("current height: "+blockData.height );
-
-        });
+        // myneb.api.latestIrreversibleBlock().then(function(blockData) {
+        // //code
+        // console.log(JSON.stringify(blockData));
+        //
+        //     $("#height").text("current height: "+blockData.height );
+        //
+        // });
 
         setTimeout(getACC,100);
         // setTimeout(loadTable,100);
@@ -219,7 +219,7 @@ myneb.api.call({
 
       // update project user number
       totalnum = arrs.length;
-      
+
     initUser();
     }
 
