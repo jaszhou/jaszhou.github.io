@@ -7,16 +7,26 @@ var myneb = new Neb();
 
 myneb.setRequest(new HttpRequest("https://mainnet.nebulas.io"));
 // myneb.setRequest(new HttpRequest("https://testnet.nebulas.io"));
+// myneb.setRequest(new HttpRequest("http://localhost:8685"));
 
 var account, tx, txhash, totalnum;
 var arrs = [];
 var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
 var nebPay = new NebPay();
 
+
+
+
 var callbackUrl = NebPay.config.mainnetUrl;   //如果合约在主网,则使用这个
 
 // MainNet
 var dappAddress = "n1purfKkMQrxza39tVJP22poyb97mMcsZNx";
+
+// contract // DEBUG:
+// nebPay.queryPayInfo(serialNumber,{
+//         callback:'http://localhost:8685/api/pay',
+//         listener:undefined
+//     })
 
 // TestNet
 // var dappAddress = "n1ofecsSErLz9Cy7s9gqkLAZq4qdmhLvVXo";

@@ -110,6 +110,7 @@ HotDollar.prototype = {
     },
 
     userlen: function() {
+        console.log("getting the number of users: "+ this.UserSize);
         return this.UserSize;
     },
 
