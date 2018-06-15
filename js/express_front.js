@@ -9,7 +9,7 @@ myneb.setRequest(new HttpRequest("https://mainnet.nebulas.io"));
 // myneb.setRequest(new HttpRequest("https://testnet.nebulas.io"));
 // myneb.setRequest(new HttpRequest("http://localhost:8685"));
 
-var account, tx, txhash, totalnum;
+var account, tx, txhash, totalnum,serialNumber;
 var arrs = [];
 var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
 var nebPay = new NebPay();
