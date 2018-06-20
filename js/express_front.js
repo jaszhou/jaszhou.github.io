@@ -11,6 +11,8 @@ myneb.setRequest(new HttpRequest("https://mainnet.nebulas.io"));
 
 var account, tx, txhash, totalnum,serialNumber;
 var arrs = [];
+var arrs_sort  = [];
+
 var NebPay = require("nebpay");     //https://github.com/nebulasio/nebPay
 var nebPay = new NebPay();
 
@@ -182,6 +184,8 @@ window.postMessage({
 function init() {
         i = 0;
 
+        arrs.sort(compare);
+
         for(var i=0;i<arrs.length;i++){
 
           $.create(arrs[i]);
@@ -190,8 +194,20 @@ function init() {
 
 }
 
+function sortByKey(array, key) {
+    return array.sort(function(a, b) {
+        var x = a[key]; var y = b[key];
+        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+}
+
 function initUser() {
+
+        //arrs = sortByKey(arrs,arrs[]);
+
         i = 0;
+
+        arrs_sort = arrs.sort(compare);
 
         for(var i=0;i<arrs.length;i++){
 
@@ -371,13 +387,26 @@ myneb.api.call({
 });
 }
 
+function compare(a,b) {
+  if (a.project< b.project)
+    return -1;
+  if (a.project > b.project)
+    return 1;
+  return 0;
+}
+
 function init() {
         i = 0;
 
 //        arrs = dedup(arrs);
 
-        for(var i=0;i<arrs.length;i++){
-          $.create(arrs[i]);
+
+        arrs_sort = arrs.sort(compare);
+
+        console.log("sort array: "+JSON.stringify(arrs_sort));
+
+        for(var i=0;i<arrs_sort.length;i++){
+          $.create(arrs_sort[i]);
 
 
         }
